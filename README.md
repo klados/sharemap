@@ -27,8 +27,7 @@ screenshots of the project
 ![Create map](screenshots/createMap.png?raw=true "Create Map")
 
 ### Map
-![Map](screenshots/map.png?raw=true "Map")
 
-![Editor page](screenshots/map1.png?raw=true "Map")
+![map](screenshots/map1.png?raw=true "Map")
 
 
