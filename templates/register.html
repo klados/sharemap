@@ -1,0 +1,63 @@
+
+{% extends 'layout.html' %}
+{% block body %}
+
+	<link rel="stylesheet" href="{{ url_for('.static',filename='css/register.css') }}" type="text/css" media="screen" charset="utf-8">
+
+<div class='container'>
+	<br>
+	<h5 class='center-align'>Register to our platform</h5>
+	<br>
+
+	<div class="center-align" >
+		<form action="{{url_for('.register')}}" method='POST' class="grey lighten-4">
+			<div class="col s12 ">
+			
+				<div class="input-field col s6">
+					<input id="fullname" name='fullname' type="text" minlength='2' maxlength='35'	class="validate">
+					<label for="fullname">Full Name</label>
+					<span style='float: right;' class="helper-text">Your real name</span>
+				</div>
+			
+				<div class="input-field col s6">
+					<input id="username" name='username' type="text" minlength='2' maxlength='35' class="validate">
+					<label for="username">Username</label>
+					<span class="helper-text" style='float: right;'>Your display name</span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="email" name='email' type="email" minlength='6' maxlength='35' class="validate">
+					<label for="email">Email</label>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="password" name='password' type="password" maxlength='35' class="validate">
+					<label for="password">Password</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="confirmPassword" name='confirmPassword' type="password" maxlength='35' class="validate">
+					<label for="confirmPassword">Confirm Password</label>
+				</div>
+			</div>
+
+
+			<div class='wrap row'>
+				<button type='submit' class='col s12 btn btn-large waves-effect indigo'>Submit</button>
+			</div>
+			<br>
+
+		</form>
+	</div>
+
+</div>
+
+{% endblock %}
+

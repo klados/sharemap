@@ -1,0 +1,43 @@
+#main{
+	margin-bottom:0px;
+}
+
+#map{
+	height:100%;
+	height:93vh;
+}
+
+#map_members {
+	margin-bottom:5%;
+	min-height: 200px;
+	max-height: 200px;
+	overflow-y: visible;
+}
+
+#inviteFriendsList{
+	max-height: 200px;
+	overflow-y: visible;
+}
+
+.chat{
+	min-height:200px;
+	max-height:200px;
+	border-style: solid;
+	border-width: 1px;
+	overflow-y: visible;
+}
+
+.msgField{
+	margin-left:0px!important;
+	margin-right:0px!important;
+}
+
+#mapMarkers{
+	overflow-y: visible;
+	max-height:85vh;
+}
+
+.chat > .collection-item{
+	padding-left:1px;
+	padding-right:1px;
+}

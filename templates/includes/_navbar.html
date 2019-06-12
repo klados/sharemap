@@ -1,0 +1,90 @@
+<nav>
+	<div class="nav-wrapper blue">
+		<div class='container'>	
+			<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+			<a href="{{ url_for('.home') }}" class="brand-logo">ShareMap</a>
+
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+
+				<!-- <li> -->
+				<!-- 	<div class="input&#45;field"> -->
+				<!-- 		<input type="search" placeholder="Search for friends" id="search" class="autocomplete" autocomplete="off"> -->
+				<!-- 		<label class="label&#45;icon" for="search"><i class="material&#45;icons">search</i></label> -->
+				<!-- 		<i class="material&#45;icons">close</i> -->
+				<!-- 	</div> -->
+				<!-- </li> -->
+
+				<li><a href="{{ url_for('.home') }}">Home</a></li>
+				<!-- <li><a href="about">About</a></li> -->
+				<li><a href="{{ url_for('.publicMaps') }}">public Maps</a></li>
+
+				{% if session.loggedIn %}
+				<li><a href="{{ url_for('.myMaps') }}">my Maps</a></li>
+				<li><a href="{{ url_for('.logout') }}">Logout</a></li>
+				{% else%}
+				<li><a href="{{ url_for('.register') }}">Register</a></li>
+				<li><a href="{{ url_for('.login') }}">Login</a></li>
+				{% endif %}
+
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+
+<ul id="slide-out" class="sidenav">
+	<li class='blue-text center-align'><h4>ShareMap</h4></li>
+	<li class='center-align'><h5>{{session['username']}}</h5></li>
+	<li><a href="{{ url_for('.home') }}">Home</a></li>
+	<!-- <li><a href="/about">About</a></li> -->
+	<li><a href="{{ url_for('.publicMaps') }}">public Maps</a></li>
+
+	{% if session.loggedIn %}
+	<li><a href="{{ url_for('.myMaps') }}">my Maps</a></li>
+	<li><a href="{{ url_for('.logout') }}">Logout</a></li>
+	{% else%}
+	<li><a href="{{ url_for('.register') }}">Register</a></li>
+	<li><a href="{{ url_for('.login') }}">Login</a></li>
+	{% endif %}
+</ul>
+
+<script>
+
+	$('#search').keyup(function(){
+		console.log('search ', $(this).val() )
+
+		fetch('/findFriend?txt='+ $(this).val())
+			.then(function(response) {
+				return response.json();
+			})
+			.then(function(myJson) {
+				var data = myJson //JSON.stringify(myJson);
+				var items = [];
+				var links = [];
+
+				for(var i = 0; i < data.length; i++){
+					console.log('i', i, data[i].username, data[i].id)
+					items[data[i].username] = null;
+					links[data[i].username] = data[i].id;
+				}
+				console.log('items', items);
+
+				$('input.autocomplete').autocomplete({
+					data: items,
+					onAutocomplete: function(val){
+						console.log('the val', val)
+						var link = window.open('/');
+						link.location;
+					}
+				});
+
+			});
+	});
+
+
+</script>
+
+
+

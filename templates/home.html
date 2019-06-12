@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<link rel='stylesheet' href='{{ url_for('static', filename = 'css/home.css') }}'>
+
+<div class='container flow-text'>
+
+	<div id='page'>
+		<div class='center-align'><h4>The best way to schedule a meeting outdoors</h4></div>
+		<div class='center-align'><h5>Create and share maps with your's coworkers and friends.<br>Start with a free account now</h5></div>
+
+		<br>
+		<div class='center-align'>
+			<a href="{{ url_for('.createMap') }}" class='btn blue btn-large'>Create new Map</a>
+		</div>
+
+	</div>
+
+</div>
+
+{% endblock %}

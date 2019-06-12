@@ -1,0 +1,30 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class='container'> 
+
+	{% if maps|length ==0 %}
+		<h5 class='center'>You do not own any maps</h5>
+	{% else %}
+		<h5 class='center'>View a map</h5>
+	{% endif %}
+
+	<div class='row'>
+		{% for iter_map in maps %}
+		<div class="col s12 m4">
+			<div class="card">
+				<div class="card-content">
+					<span class="card-title center">{{ iter_map.title }}</span>
+					<p>Created at: {{ iter_map.date }}</p>
+				</div>
+				<div class="card-action center">
+					<a href="{{ url_for('.map', hash_id=iter_map.hash_code) }}" class='blue-text'>Open</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}

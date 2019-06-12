@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>shareMap</title>
+		<link rel="shortcut icon" href="{{ url_for('.static', filename='favicon.ico') }}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body class='grey lighten-5'>
+		{% include 'includes/_navbar.html'%}
+
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+		<div class='container'>
+			<ul class=flashes>
+				{% for category, message in messages %}
+				<li><div class="card-panel lighten-4 text-darken-4 center-align alert-{{category}}">{{message}}</div></li>
+				{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+		{% endwith %}
+
+
+		{% block body %}
+		{% endblock%}
+
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+
+				$('.sidenav').sidenav();
+
+				$(document).on('click', '.flashes', function() {
+						$(this).parent().remove();
+				});
+
+			});
+		</script>
+
+	</body>
+</html>
