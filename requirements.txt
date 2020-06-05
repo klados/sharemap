@@ -22,7 +22,7 @@ cycler==0.10.0
 defusedxml==0.5.0
 distlib==0.2.9
 distro==1.4.0
-Django==2.1.7
+Django==2.2.13
 docopt==0.6.2
 file-magic==0.4.0
 Flask==1.0.2
