@@ -105,7 +105,7 @@ python-nmap==0.6.1
 python3-openid==3.1.0
 pytoml==0.1.20
 pytz==2018.9
-PyYAML==3.13
+PyYAML==5.4
 queuelib==1.5.0
 ranger-fm==1.9.2
 reportlab==3.5.13
