@@ -3,7 +3,7 @@ arandr==0.1.10
 asn1crypto==0.24.0
 attrs==18.2.0
 Automat==0.7.0
-Babel==2.6.0
+Babel==2.9.1
 bcrypt==3.1.6
 beautifulsoup4==4.7.1
 binwalk==2.1.1
