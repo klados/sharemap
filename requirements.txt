@@ -71,7 +71,7 @@ paramiko==2.4.2
 parsel==1.5.1
 passlib==1.7.1
 pep517==0.5.0
-Pillow==6.0.0
+Pillow==9.0.1
 pipreqs==0.4.9
 ply==3.11
 progress==1.5
