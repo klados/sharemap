@@ -67,7 +67,7 @@ oauth2==1.9.0.post1
 oauthlib==3.0.1
 packaging==19.0
 pacman-mirrors==4.14.2
-paramiko==2.4.2
+paramiko==2.10.1
 parsel==1.5.1
 passlib==1.7.1
 pep517==0.5.0
