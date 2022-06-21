@@ -62,7 +62,7 @@ mysqlclient==1.4.2.post1
 Naked==0.1.31
 notify2==0.3.1
 npyscreen==4.10.5
-numpy==1.16.2
+numpy==1.22.0
 oauth2==1.9.0.post1
 oauthlib==3.0.1
 packaging==19.0
